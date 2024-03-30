@@ -1,10 +1,12 @@
 import random
 import os
+from Manager import Manager
 
 def getFolder():
     """Return the folder where the code is"""
 
     return os.path.join(os.path.dirname(__file__), "files")
+
 
 def getClasses():
     """Return a list of the txt files located in the project"""
@@ -19,6 +21,7 @@ def getClasses():
             CLASSES.append(os.path.splitext(file)[0])
 
     return CLASSES
+
 
 def getSelectedFile():
     """Return the file selected by the user"""
@@ -47,7 +50,10 @@ def main():
             content = file.read()
     except FileNotFoundError:
         print("Error: file doesn't exist")
-    
 
-if __name__ == '__main__':
-    main()
+    content = content.split("\n")
+        
+
+if __name__ == "__main__":
+    app = Manager()
+    app.mainloop()

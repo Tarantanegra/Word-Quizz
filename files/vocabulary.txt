@@ -1,0 +1,3 @@
+dog - perro
+cat - gato
+ant - hormiga
